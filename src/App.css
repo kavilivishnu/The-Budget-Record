@@ -1,38 +1,561 @@
 .App {
   text-align: center;
+  background-color: whitesmoke;
+  margin-top: -2%;
+  padding-bottom: 14vh;
+  padding-top: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.trash {
+  background-color: whitesmoke;
+  margin-top: -2%;
+  padding-bottom: 56vh;
+  padding-top: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.title {
+  font-size: 45px;
+  margin-top: 5%;
+  font-family: "Sansita Swashed";
+  text-transform: capitalize;
+  color: rgb(252, 146, 53);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.heading-1 {
+  font-size: 45px;
+  color: salmon;
+  margin-top: 5%;
+}
+
+.heading-2 {
+  font-size: 30px;
+  color: coral;
+}
+
+.input_name {
+  margin-top: 7%;
+  margin-right: 5%;
+  width: 20%;
+  min-height: 30px;
+  border-radius: 5px 5px 5px 5px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  font-size: large;
+  background-color: whitesmoke;
+}
+
+.input_amount {
+  margin-right: 0.4%;
+  width: 20%;
+  min-height: 30px;
+  border-radius: 5px 5px 5px 5px;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  outline: none;
+  font-size: large;
+  background-color: whitesmoke;
+}
+
+.search {
+  width: 40%;
+  min-height: 30px; 
+  font-size: large;
+  border-top: none;
+  border-bottom: none;
+  outline: none;
+  border-radius: 5px 5px 5px 5px;
+  background-color: whitesmoke;
+}
+
+.search1 {
+  width: 40%;
+  min-height: 30px; 
+  font-size: large;
+  border-top: none;
+  border-bottom: none;
+  outline: none;
+  border-radius: 5px 5px 5px 5px;
+  background-color: whitesmoke;
+}
+
+.add_button {
+  margin-top: 3%;
+  border-radius: 5px 5px 5px 5px;
+  transition: 0.5s;
+  border: none;
+  outline: none;
+  background-color: rgb(94, 94, 94);
+  margin-right: 16px;
+  min-width: 60px;
+  min-height: 20px;
+  font-size: 20px;
+  font-family: 'Asap';
+  cursor: pointer;
+}
+
+.add {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.add:hover {
+  color: black;
+  transition: 0.3s;
+  outline: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.add_button:hover {
+  background-color: cornflowerblue;
+  transition: 0.3s;
+  outline: none;
+  font-weight: bolder;
+  text-transform: capitalize;
+  font-style: italic;
+}
+
+.clear_all_button {
+  margin-top: 3%;
+  padding: 5px 40px;
+  border-radius: 5px 5px 5px 5px;
+  transition: 0.5s;
+  border: none;
+  outline: none;
+  background-color: rgb(94, 94, 94);
+  margin-left: 6px;
+  cursor: pointer;
+}
+
+.clear {
+  color: white;
+}
+
+.clear:hover {
+  color: black;
+  transition: 0.3s;
+  outline: none;
+}
+
+.clear_all_button:hover {
+  background-color: cornflowerblue;
+  transition: 0.3s;
+  outline: none;
+}
+
+.items {
+  margin-right: 17%; 
+  margin-top: 5%;
+  font-family: 'Asap';
+}
+
+.items_name {
+  text-transform: capitalize;
+  font-size: large;
+  margin-left: -30%;
+  font-family: 'Asap';
+  font-style: italic;
+}
+
+.nav {
+  font-style: italic;
+  font-weight: bolder;
+  font-family: "Overlock";
+  color:chocolate;
+  font-size: 25px;
+}
+
+.trash_name {
+  text-transform: capitalize;
+  font-size: larger;
+  font-family: 'Asap';
+  font-style: italic;
+  margin-right: 60%;
+}
+
+.trash_amount  {
+  font-size: larger;
+  font-family: 'Asap';
+  font-style: italic;
+  margin-left: 70%;
+}
+
+.items_amount {
+  font-size: large;
+  margin-left: 18%;
+  font-family: 'Asap';
+  font-style: italic;
+}
+
+.edit_button {
+  padding: 5px 20px;
+  margin-right: 30%;;
+  border-color: rgb(54, 54, 54);
+  border: none;
+  background-color: rgb(51, 51, 51);
+  border-radius: 5px 5px 5px 5px;
+  cursor: pointer;
+}
+
+.edit {
+  color: white;
+}
+
+.edit:hover {
+  color: black;
+  transition: 0.3s;
+  outline: none;
+}
+
+.edit_button:hover {
+  background-color: cornflowerblue;
+  transition: 0.3s;
+  outline: none;
+}
+
+.delete_button {
+  padding: 5px 20px;
+  margin-right: -100%;;
+  border-color: rgb(54, 54, 54);
+  border: none;
+  background-color: rgb(51, 51, 51);
+  border-radius: 5px 5px 5px 5px;
+  cursor: pointer;
+}
+
+.delete {
+  color: white;
+}
+
+.delete:hover {
+  color: black;
+  transition: 0.3s;
+  outline: none;
+}
+
+.delete_button:hover {
+  background-color: cornflowerblue;
+  transition: 0.3s;
+  outline: none;
+}
+
+.empty_trash {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-color: rgb(54, 54, 54);
+  border: none;
+  background-color: rgb(94, 94, 94);
+  border-radius: 5px 5px 5px 5px;
+  cursor: pointer;
+  margin-top: 60px;
+  font-weight: bolder;
+  font-size: large;
+  font-family: 'Asap';
+  outline: none;
+}
+
+.empty_trash:hover {
+  background-color: cornflowerblue;
+  transition: 0.5s;
+  outline: none;
+  font-style: italic;
+  font-weight: bolder;
+}
+
+.buttons {
+  margin-left: 50%;
+  margin-top: -3%;
+  margin-right: 30px;
+  transition: 0.5s;
+}
+
+@media all and (max-width:768px) {
+  .App {
+    padding-bottom: 23vh;
+    background-color: whitesmoke;
   }
-  to {
-    transform: rotate(360deg);
+
+  .title {
+    margin-top: 40px;
+    font-size: 30px;
+  }
+
+  .heading-1 {
+    margin-top: 50px;
+    font-size: 30px;
+  }
+
+  .heading-2 {
+    font-size: 20px;
+  }
+
+  .heading-3 {
+    font-size: 15px;
+  }
+
+  .input_name {
+    width: 50%;
+    margin-right: 10px;
+    font-size: medium;
+  }
+
+  .input_amount {
+    width: 43%;
+    font-size: medium;
+  }
+
+  .search {
+    width: 70%;
+    min-height: 40px; 
+    font-size: 10px;
+  }
+
+  .search1 {
+    width: 70%;
+    min-height: 40px; 
+    font-size: 15px;
+  }
+
+  .add_button {
+    margin-top: 7%;
+    padding: 7px 17px;
+  }
+
+  .clear_all_button {
+    padding: 5px 40px;
+    margin-left: 0px;
+  }
+
+  .items {
+    margin-top: 17%;
+  }
+
+  .items_name {
+    font-size: 12px;
+    margin-left: -16%;
+    position: absolute;
+    margin-top: -7%;
+  }
+
+  .items_amount {
+    font-size: 12px;
+    /* margin-top: 100% */
+  }
+
+  .nav {
+    font-size: large;
+    margin-right: 0px;
+  }
+
+  .trash {
+    padding-right: 18%;
+  }
+
+  .trash_name {
+    font-size: 85%;
+    margin-right: 30%;
+  }
+
+  .trash_amount {
+    font-size: 85%;
+    margin-left: 86%;
+  }
+
+  .buttons {
+    margin-top: 5%;
+  }
+
+  .edit_button {
+    padding: 5px 15px;
+  }
+
+  .delete_button {
+    padding: 5px 15px;
+  }
+
+  .empty_trash {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-right: 7px;
+    padding-left: 7px;
+    margin-left: 50px;
+  }
+  
+}
+
+@media all and (min-width: 1024px) {
+
+  .App {
+    background-color: whitesmoke;
+  }
+
+  .add_button {
+    padding: 7px 17px;
+  }
+
+  .items {
+    margin-top: 17%;
+  }
+
+  .items_name {
+    font-size: 20px;
+    margin-left: -16%;
+    position: absolute;
+    margin-top: -7%;
+  }
+
+  .items_amount {
+    font-size: 20px;
+    /* margin-top: 100% */
+  }
+
+  .buttons {
+    margin-top: 5%;
+  }
+
+  .edit_button {
+    padding: 5px 15px;
+  }
+
+  .delete_button {
+    padding: 5px 15px;
+  }
+}
+
+@media all and (min-height: 731px) {
+  .App {
+    padding-bottom: 30vh;
+    background-color: whitesmoke;
+  }
+
+  .search {
+    font-size: large;
+  }
+}
+
+@media all and (max-height: 1366px) {
+  .App {
+    padding-bottom: 30vh;
+    background-color: whitesmoke;
+  }
+
+  .search {
+    font-size: large;
+  }
+
+  .search1 {
+    font-size: large;
+  }
+
+  .trash_name {
+    font-size: larger;
+  }
+}
+
+@media all and (min-height: 1024px) {
+  .App {
+    padding-bottom: 45vh;
+    background-color: whitesmoke;
+  }
+
+  .search {
+    font-size: large;
+  }
+
+  .search1 {
+    font-size: large;
+  }
+
+  .trash_name {
+    font-size: 20px;
+  }
+
+  .trash_amount {
+    font-size: 20px;
+  }
+
+  .empty_trash {
+    margin-left: 20%;
+  }
+}
+
+@media all and (min-height: 1366px) {
+  .App {
+    padding-bottom: 65vh;
+    background-color: whitesmoke;
+  }
+
+  .search {
+    font-size: large;
+  }
+
+  .search1 {
+    font-size: large;
+  }
+
+  .trash_name {
+    font-size: 30px;
+  }
+
+  .trash_amount {
+    font-size: 30px;
+  }
+
+  .empty_trash {
+    margin-right: 20%;
+  }
+}
+
+@media all and (max-width: 640px) {
+  .search1 {
+    font-size: 15px;
+  }
+
+  .trash_name {
+    font-size: 10px;
+  }
+
+  .trash_amount {
+    margin-left: 86%;
+    font-size: 10px;
+  }
+}
+
+@media all and (max-width: 568px) {
+  .search1 {
+    font-size: 12px;
+  }
+
+  .search {
+    font-size: 13px;
+  }
+
+  .input_name{
+    font-size: 14px;
+  }
+
+  .input_amount{
+    font-size: 14px;
+  }
+
+  .trash_name {
+    font-size: 10px;
+  }
+
+  .trash_amount {
+    margin-left: 86%;
+    font-size: 10px;
+  }
+
+  .empty_trash {
+    margin-left: 20%;
+  }
+}
+
+@media all and (min-width: 410px) {
+  .trash_amount {
+    font-size: 20px;
   }
 }
