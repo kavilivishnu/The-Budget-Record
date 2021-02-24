@@ -27,11 +27,11 @@ function Trash(props) {
                     <p>
                         {" "}
                         <span className="trash_name">
-                            <b>EVENT: {items.lebeling}</b><br />
+                            <b>{items.lebeling}</b><br />
                         </span>
                         <span
                             className="trash_amount">
-                            <b>AMOUNT ( {items.digit} {items.bill} ) {""}</b>
+                            <b>{items.digit} {items.bill} {""}</b>
                         </span>
                     </p>
                 </div>

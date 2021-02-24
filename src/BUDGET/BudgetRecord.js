@@ -77,7 +77,7 @@ function BudgetRecord() {
         setArray(array.filter((individualItem) => individualItem.id !== id));
         setFinalArray([
             ...finalArray,
-            { id: uuidv4(), lebeling: name, digit: amountToInt, bill: symbol }
+            { id: uuidv4(), lebeling: "EVENT:" + " " + name, digit: "AMOUNT" + " " + "(" + " " + amountToInt + " " + " )", bill: symbol }
         ]);
         if (clicked === true) {
             if (total === 0) {
