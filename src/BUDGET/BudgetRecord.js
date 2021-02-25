@@ -253,10 +253,10 @@ function BudgetRecord() {
                     />
                     <br />
                     <button className="add_button" onClick={(e) => handleTitle(e)}>
-                        <span style={{ color: "white" }}>Give a Title</span>
+                        <span style={{ color: "white" }}>Click to ADD new Title</span>
                     </button>
                     <button className="add_button" onClick={(e) => handleRename(e)}>
-                        <span style={{ color: "white" }}>Edit the Title</span>
+                        <span style={{ color: "white" }}>Click to EDIT the existing Title</span>
                     </button>
                     <br />
                     <input
