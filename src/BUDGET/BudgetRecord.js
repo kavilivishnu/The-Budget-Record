@@ -181,6 +181,16 @@ function BudgetRecord() {
         }
     };
 
+    const handleRename = () => {
+        if (btn === "") {
+            alert("Sorry😅 you got to have a title to edit! You can't edit unless you have a title put up.")
+        }
+        else {
+            setText(btn);
+            setBtn("");
+        }
+    }
+
     useEffect(() => {
         if (localStorage.getItem("list")) {
             setArray(JSON.parse(localStorage.getItem("list")));
@@ -239,18 +249,21 @@ function BudgetRecord() {
                         className="search1"
                         value={text}
                         onChange={(e) => setText(e.target.value)}
-                        placeholder="Change your Title here... Eg: Trip to Miami"
+                        placeholder="Enter your Title here... Eg: Trip to Miami"
                     />
                     <br />
                     <button className="add_button" onClick={(e) => handleTitle(e)}>
-                        <span style={{ color: "white" }}>Name/Rename Your Title</span>
+                        <span style={{ color: "white" }}>Give a Title</span>
+                    </button>
+                    <button className="add_button" onClick={(e) => handleRename(e)}>
+                        <span style={{ color: "white" }}>Edit the Title</span>
                     </button>
                     <br />
                     <input
                         className="input_name"
                         value={input}
                         onChange={(e) => setInput(e.target.value)}
-                        placeholder="Event Name..."
+                        placeholder="Enter Event Name..."
                     />
                     <input
                         className="input_amount"
