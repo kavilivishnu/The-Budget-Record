@@ -42,7 +42,6 @@ function BudgetRecord() {
     ]);
     const [total, setTotal] = useState(0);
     const eventName = "EVENT NAME : ";
-    const [display, setDisplay] = useState(false);
     const [selected, setSelected] = useState("");
     const [symbol, setSymbol] = useState("");
     const [search, setSearch] = useState("");
@@ -155,11 +154,10 @@ function BudgetRecord() {
                     id: uuidv4(),
                     name: input,
                     amount: money,
-                    currency: selected + "IS THE AMOUNT"
+                    currency: selected + " , " + "IS THE AMOUNT"
                 }
             ]);
             setSymbol(selected);
-            setDisplay(true);
             var sumOfMoneyAndTotal = moneyToInt + totalToInt + selected;
             setTotal(sumOfMoneyAndTotal);
             setInput("");
@@ -263,22 +261,26 @@ function BudgetRecord() {
                             Click to EDIT the existing Title
             </span>
                     </button>
-                    <br />
-                    <b>Select the currency : </b>{" "}
-                    <select
-                        value={selected}
-                        onChange={(e) => setSelected(e.target.value)}
-                    >
-                        <option value="Click to Select">Click to Select</option>
-                        <option value="₹">₹</option>
-                        <option value="£">£</option>
-                        <option value="€">€</option>
-                        <option value="¥">¥</option>
-                        <option value="د.إ">د.إ</option>
-                        <option value="$">$</option>
-                        <option value="C$">C$</option>
-                    </select>
-                    <br />
+                    <br /><br />
+                    <h2 style={{ fontFamily: "Overlock" }} >
+                        Select the currency : {" "}
+                        <select
+                            value={selected}
+                            onChange={(e) => setSelected(e.target.value)}
+                            style={{ width: "180px", height: "35px" }}
+                        >
+                            <option value="Click to Select" style={{ fontFamily: "Overlock", fontWeight: "bolder", fontSize: "20px" }} >Click to Select</option>
+                            <option value="₹" style={{ fontFamily: "Overlock", fontWeight: "bolder", fontSize: "20px" }} >₹</option>
+                            <option value="£" style={{ fontFamily: "Overlock", fontWeight: "bolder", fontSize: "21px" }} >£</option>
+                            <option value="€" style={{ fontFamily: "Overlock", fontWeight: "bolder", fontSize: "20px" }} >€</option>
+                            <option value="¥" style={{ fontFamily: "Overlock", fontWeight: "bolder", fontSize: "20px" }} >¥</option>
+                            <option value="د.إ" style={{ fontFamily: "Overlock", fontWeight: "bolder", fontSize: "20px" }} >
+                                د.إ
+                        </option>
+                            <option value="$" style={{ fontFamily: "Overlock", fontWeight: "bolder", fontSize: "20px" }} >$</option>
+                            <option value="C$" style={{ fontFamily: "Overlock", fontWeight: "bolder", fontSize: "20px" }} >C$</option>
+                        </select>
+                    </h2>
                     <input
                         className="input_name"
                         value={input}
@@ -292,8 +294,8 @@ function BudgetRecord() {
                         placeholder="Enter Amount..."
                     />
                     <br />
-                    <button onClick={(e) => handleCurrency(e)}>Add To The Record</button>
-                    <br /> <br />
+                    <button className="add_button" onClick={(e) => handleCurrency(e)}><span style={{ color: "white" }} >Add To The Record</span></button>
+                    <br /> <br /> <br /><br />
                     <input
                         className="search"
                         onChange={(e) => setSearch(e.target.value)}
@@ -325,11 +327,8 @@ function BudgetRecord() {
                         <div key={id} className="all_items">
                             <p className="items">
                                 <b>
-                                    {display && <span className="items_name"> {items.name}</span>}
-                                    <span className="items_amount">
-                                        {items.amount}
-                                        {items.currency}
-                                    </span>
+                                    <span className="items_name">{items.name}</span>
+                                    <span className="items_amount">{items.amount} {items.currency}</span>
                                 </b>
                                 {total !== 0 ? (
                                     <div className="buttons">
