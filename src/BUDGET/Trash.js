@@ -1,14 +1,15 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 function Trash(props) {
-    const { finalArray, setFinalArray } = props;
+    const { finalArray, setFinalArray, eventName } = props;
 
     const handleTrash = () => {
         if (finalArray === []) {
             alert("Sorry🙃! Nothing to delete..");
-        }
-        else {
-            var clicked = window.confirm("Hey there! You're about to empty your TRASH. You sure🤨?");
+        } else {
+            var clicked = window.confirm(
+                "Hey there! You're about to empty your TRASH. You sure🤨?"
+            );
             if (clicked === true) {
                 setFinalArray([]);
             }
@@ -16,22 +17,34 @@ function Trash(props) {
                 setFinalArray(finalArray);
             }
         }
-    }
+    };
 
     return (
-        <div className="trash" >
-            <button className="empty_trash" style={{ color: "white" }} onClick={(e) => handleTrash(e)} >CLEAR TRASH</button>
+        <div className="trash">
+            <button
+                className="empty_trash"
+                style={{ color: "white" }}
+                onClick={(e) => handleTrash(e)}
+            >
+                CLEAR TRASH
+      </button>
             {finalArray.map((items, id) => (
                 <div key={id} className="trash_items">
                     {/* <button onClick={() => handleSymbol(items)} >Show Symbol</button> */}
                     <p>
                         {" "}
                         <span className="trash_name">
-                            <b>{items.lebeling}</b><br />
+                            <b>
+                                {" "}
+                                {eventName} {items.lebeling}
+                            </b>
+                            <br />
                         </span>
-                        <span
-                            className="trash_amount">
-                            <b>{items.digit} {items.bill} {""}</b>
+                        <span className="trash_amount">
+                            <b>
+                                {/* {items.digit} {items.bill} {""} */}
+                AMOUNT : ( {items.digit} {items.bill} ) {""}
+                            </b>
                         </span>
                     </p>
                 </div>

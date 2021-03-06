@@ -2,15 +2,13 @@
 // it was like: EVENT: AMOUNT() and also the one containing information i.e., EVENT: something Amount (345$). This case
 // will be seen only when the user had opened the app for the first time. Once the user deletes the whole stuff, the
 // not required part will get deleted including the main information. The user can't get to te coclusion by themselves
-// that, this will solve the situation. So to make it more user-friendly, instead of associating the heading within the
+// that, this will solve the situation. So to make it more user-friendly, instead of associating the heading within the 
 // map function, we append those headings to the properties within the object of an array. Doing so, only the setter
-// state will get displayed but not the current state that doesn't have any information in that. Another update was
-// showing an alert related to the "TITLE" part if clicked the name/rename button when not entered anything in the
-// filed. Previously the the nitification would pop out when the user hadn't entered any data in the field. Those
-//were the two updates made to the app. 
-
-// The previous copy of the whole code of this component is copied in the
-// CopyOfMain3.js component.
+// state will get displayed but not the current state that doesn't have any information in that. Another update was 
+// showing an alert related to the "TITLE" part if clicked the name/rename button when not entered anything in the 
+// filed. Previously the the nitification would pop out when the user hadn't entered any data in the field. Those 
+//were the two updates made to the app. The previous copy of the whole code of this component is copied in the
+// CopyOfMain.js component.
 
 import React, { useState, useEffect, Fragment } from "react";
 import { v4 as uuidv4 } from "uuid";
@@ -30,7 +28,7 @@ function BudgetRecord() {
             { autoClose: 6000 }
         );
         toast.info(
-            "Once you're done filling the fields, select the currency currently been used at you place, then add your record😊",
+            "Once you're done filling the fields, click on the currency button that is currently used at your place accordingly, to add the entered data to your record😊",
             { autoClose: 10000 }
         );
     }, []);
@@ -41,9 +39,13 @@ function BudgetRecord() {
         { id: null, name: "", amount: "", currency: "" }
     ]);
     const [total, setTotal] = useState(0);
-    const eventName = "EVENT NAME : ";
-    const [display, setDisplay] = useState(false);
-    const [selected, setSelected] = useState("");
+    const dheeram = "د.إ";
+    const dollar = "$";
+    const rupees = "₹";
+    const euro = "€";
+    const pound = "£";
+    const yen = "¥";
+    const canadian = "C$";
     const [symbol, setSymbol] = useState("");
     const [search, setSearch] = useState("");
     const [filtered, setFiltered] = useState([]);
@@ -75,12 +77,7 @@ function BudgetRecord() {
         setArray(array.filter((individualItem) => individualItem.id !== id));
         setFinalArray([
             ...finalArray,
-            {
-                id: uuidv4(),
-                lebeling: name,
-                digit: amountToInt,
-                bill: selected
-            }
+            { id: uuidv4(), lebeling: "EVENT:" + " " + name, digit: "AMOUNT" + " " + "(" + " " + amountToInt, bill: symbol + ")" }
         ]);
         if (clicked === true) {
             if (total === 0) {
@@ -145,7 +142,7 @@ function BudgetRecord() {
         }
     };
 
-    const handleCurrency = () => {
+    const handleCurrency = (val) => {
         if (input === "" || money === "") {
             alert("Yo! You got to FILL THE FIELDS😅😄");
         } else {
@@ -153,15 +150,16 @@ function BudgetRecord() {
                 ...array,
                 {
                     id: uuidv4(),
-                    name: input,
-                    amount: money,
-                    currency: selected + "IS THE AMOUNT"
+                    name: "EVENT" + ":" + " " + input + " ",
+                    // amount: "AMOUNT" + " " + "(" + " " + money + val + " " + ")",
+                    amount: money + val + " , " + "IS THE AMOUNT",
+                    currency: val
                 }
             ]);
-            setSymbol(selected);
-            setDisplay(true);
-            var sumOfMoneyAndTotal = moneyToInt + totalToInt + selected;
-            setTotal(sumOfMoneyAndTotal);
+            setSymbol(val);
+            var sumOfMoneyAndTotal = moneyToInt + totalToInt;
+            var currency = sumOfMoneyAndTotal + val;
+            setTotal(currency);
             setInput("");
             setMoney("");
             toast.success(
@@ -185,14 +183,13 @@ function BudgetRecord() {
 
     const handleRename = () => {
         if (btn === "") {
-            alert(
-                "Sorry😅 you got to have a title to edit! You can't edit unless you have a title put up."
-            );
-        } else {
+            alert("Sorry😅 you got to have a title to edit! You can't edit unless you have a title put up.")
+        }
+        else {
             setText(btn);
             setBtn("");
         }
-    };
+    }
 
     useEffect(() => {
         if (localStorage.getItem("list")) {
@@ -259,25 +256,8 @@ function BudgetRecord() {
                         <span style={{ color: "white" }}>Click to ADD new Title</span>
                     </button>
                     <button className="add_button" onClick={(e) => handleRename(e)}>
-                        <span style={{ color: "white" }}>
-                            Click to EDIT the existing Title
-            </span>
+                        <span style={{ color: "white" }}>Click to EDIT the existing Title</span>
                     </button>
-                    <br />
-                    <b>Select the currency : </b>{" "}
-                    <select
-                        value={selected}
-                        onChange={(e) => setSelected(e.target.value)}
-                    >
-                        <option value="Click to Select">Click to Select</option>
-                        <option value="₹">₹</option>
-                        <option value="£">£</option>
-                        <option value="€">€</option>
-                        <option value="¥">¥</option>
-                        <option value="د.إ">د.إ</option>
-                        <option value="$">$</option>
-                        <option value="C$">C$</option>
-                    </select>
                     <br />
                     <input
                         className="input_name"
@@ -292,7 +272,56 @@ function BudgetRecord() {
                         placeholder="Enter Amount..."
                     />
                     <br />
-                    <button onClick={(e) => handleCurrency(e)}>Add To The Record</button>
+                    <button
+                        className="add_button"
+                        style={{ color: "white" }}
+                        onClick={() => handleCurrency(rupees)}
+                    >
+                        ₹
+          </button>
+                    <button
+                        className="add_button"
+                        style={{ color: "white" }}
+                        onClick={() => handleCurrency(dheeram)}
+                    >
+                        د.إ
+          </button>
+                    <button
+                        className="add_button"
+                        style={{ color: "white" }}
+                        onClick={() => handleCurrency(dollar)}
+                    >
+                        $
+          </button>
+                    <button
+                        className="add_button"
+                        style={{ color: "white" }}
+                        onClick={() => handleCurrency(euro)}
+                    >
+                        €
+          </button>
+                    <button
+                        className="add_button"
+                        style={{ color: "white" }}
+                        onClick={() => handleCurrency(pound)}
+                    >
+                        £
+          </button>
+                    <button
+                        className="add_button"
+                        style={{ color: "white" }}
+                        onClick={() => handleCurrency(yen)}
+                    >
+                        ¥
+          </button>
+                    <button
+                        className="add_button"
+                        style={{ color: "white" }}
+                        onClick={() => handleCurrency(canadian)}
+                    >
+                        C$
+          </button>
+                    <br /> <br />
                     <br /> <br />
                     <input
                         className="search"
@@ -325,11 +354,8 @@ function BudgetRecord() {
                         <div key={id} className="all_items">
                             <p className="items">
                                 <b>
-                                    {display && <span className="items_name"> {items.name}</span>}
-                                    <span className="items_amount">
-                                        {items.amount}
-                                        {items.currency}
-                                    </span>
+                                    <span className="items_name">{items.name}</span>
+                                    <span className="items_amount">{items.amount}</span>
                                 </b>
                                 {total !== 0 ? (
                                     <div className="buttons">
@@ -355,7 +381,7 @@ function BudgetRecord() {
                 <Trash
                     finalArray={finalArray}
                     setFinalArray={setFinalArray}
-                    eventName={eventName}
+                    symbol={symbol}
                 />
             )}
         </div>
