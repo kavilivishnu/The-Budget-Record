@@ -30,7 +30,7 @@ function BudgetRecord() {
             { autoClose: 6000 }
         );
         toast.info(
-            "Once you're done filling the fields, select the currency currently been used at you place, then add your record😊",
+            "Once you're done filling the fields, select the currency currently been used at your place, then add your record😊",
             { autoClose: 10000 }
         );
     }, []);
