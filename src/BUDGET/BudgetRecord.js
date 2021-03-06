@@ -277,8 +277,8 @@ function BudgetRecord() {
                             <option value="د.إ(DIRHAMS)" style={{ fontFamily: "Overlock", fontWeight: "bolder", fontSize: "20px" }} >
                                 د.إ(DIRHAMS)
                             </option>
-                            <option value="$" style={{ fontFamily: "Overlock", fontWeight: "bolder", fontSize: "20px" }} >$</option>
-                            <option value="C$" style={{ fontFamily: "Overlock", fontWeight: "bolder", fontSize: "20px" }} >C$</option>
+                            <option value="$(Us DOLLAR)" style={{ fontFamily: "Overlock", fontWeight: "bolder", fontSize: "20px" }} >$(Us DOLLAR)</option>
+                            <option value="C$(Canadian DOLLAR)" style={{ fontFamily: "Overlock", fontWeight: "bolder", fontSize: "20px" }} >C$(Canadian DOLLAR)</option>
                         </select>
                     </h2>
                     <input
