@@ -270,13 +270,13 @@ function BudgetRecord() {
                             style={{ width: "180px", height: "35px" }}
                         >
                             <option value="Click to Select" style={{ fontFamily: "Overlock", fontWeight: "bolder", fontSize: "20px" }} >Click to Select</option>
-                            <option value="₹" style={{ fontFamily: "Overlock", fontWeight: "bolder", fontSize: "20px" }} >₹</option>
-                            <option value="£" style={{ fontFamily: "Overlock", fontWeight: "bolder", fontSize: "21px" }} >£</option>
-                            <option value="€" style={{ fontFamily: "Overlock", fontWeight: "bolder", fontSize: "20px" }} >€</option>
-                            <option value="¥" style={{ fontFamily: "Overlock", fontWeight: "bolder", fontSize: "20px" }} >¥</option>
-                            <option value="د.إ" style={{ fontFamily: "Overlock", fontWeight: "bolder", fontSize: "20px" }} >
-                                د.إ
-                        </option>
+                            <option value="₹(Indian RUPEES)" style={{ fontFamily: "Overlock", fontWeight: "bolder", fontSize: "20px" }} >₹(Indian RUPEES)</option>
+                            <option value="£(POUND Sterling)" style={{ fontFamily: "Overlock", fontWeight: "bolder", fontSize: "21px" }} >£(POUND Sterling)</option>
+                            <option value="€(EURO)" style={{ fontFamily: "Overlock", fontWeight: "bolder", fontSize: "20px" }} >€(EURO)</option>
+                            <option value="¥(Japaneese YEN)" style={{ fontFamily: "Overlock", fontWeight: "bolder", fontSize: "20px" }} >¥(Japaneese YEN)</option>
+                            <option value="د.إ(DIRHAMS)" style={{ fontFamily: "Overlock", fontWeight: "bolder", fontSize: "20px" }} >
+                                د.إ(DIRHAMS)
+                            </option>
                             <option value="$" style={{ fontFamily: "Overlock", fontWeight: "bolder", fontSize: "20px" }} >$</option>
                             <option value="C$" style={{ fontFamily: "Overlock", fontWeight: "bolder", fontSize: "20px" }} >C$</option>
                         </select>
