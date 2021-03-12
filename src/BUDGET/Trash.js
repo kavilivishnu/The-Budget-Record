@@ -30,23 +30,28 @@ function Trash(props) {
       </button>
             {finalArray.map((items, id) => (
                 <div key={id} className="trash_items">
-                    {/* <button onClick={() => handleSymbol(items)} >Show Symbol</button> */}
-                    <p>
-                        {" "}
-                        <span className="trash_name">
-                            <b>
+                    {items.lebeling === "" ? (
+                        ""
+                    ) : (
+                        <div>
+                            <p>
                                 {" "}
-                                {eventName} {items.lebeling}
-                            </b>
-                            <br />
-                        </span>
-                        <span className="trash_amount">
-                            <b>
-                                {/* {items.digit} {items.bill} {""} */}
-                AMOUNT : ( {items.digit} {items.bill} ) {""}
-                            </b>
-                        </span>
-                    </p>
+                                <span className="trash_name">
+                                    <b>
+                                        {" "}
+                                        {eventName} {items.lebeling}
+                                    </b>
+                                    <br />
+                                </span>
+                                <span className="trash_amount">
+                                    <b>
+                                        {/* {items.digit} {items.bill} {""} */}
+                    AMOUNT : ( {items.digit} {items.bill} ) {""}
+                                    </b>
+                                </span>
+                            </p>
+                        </div>
+                    )}
                 </div>
             ))}
         </div>

@@ -7,7 +7,7 @@
 // state will get displayed but not the current state that doesn't have any information in that. Another update was
 // showing an alert related to the "TITLE" part if clicked the name/rename button when not entered anything in the
 // filed. Previously the the nitification would pop out when the user hadn't entered any data in the field. Those
-//were the two updates made to the app.
+//were the two updates made to the app. 
 
 // The previous copy of the whole code of this component is copied in the
 // CopyOfMain3.js component.
@@ -24,16 +24,16 @@ import Trash from "./Trash";
 
 toast.configure();
 function BudgetRecord() {
-    // useEffect(() => {
-    //     toast.info(
-    //         "Hello👋! I'm BUDDY😃. I will help you be aware of your actions in this APP😊",
-    //         { autoClose: 6000 }
-    //     );
-    //     toast.info(
-    //         "Once you're done filling the fields, select the currency currently been used at your place, then add your record😊",
-    //         { autoClose: 10000 }
-    //     );
-    // }, []);
+    useEffect(() => {
+        toast.info(
+            "Hello👋! I'm BUDDY😃. I will help you be aware of your actions in this APP😊",
+            { autoClose: 6000 }
+        );
+        toast.info(
+            "Once you're done filling the fields, select the currency currently been used at your place, then add your record😊",
+            { autoClose: 10000 }
+        );
+    }, []);
 
     const [input, setInput] = useState("");
     const [money, setMoney] = useState("");
@@ -261,95 +261,23 @@ function BudgetRecord() {
                             Click to EDIT the existing Title
             </span>
                     </button>
-                    <br />
-                    <br />
-                    <h2 style={{ fontFamily: "Overlock" }}>
-                        Select the currency :{" "}
+                    <br /><br />
+                    <h2 style={{ fontFamily: "Overlock" }} >
+                        Select the currency : {" "}
                         <select
                             value={selected}
                             onChange={(e) => setSelected(e.target.value)}
                             style={{ width: "180px", height: "35px" }}
                         >
-                            <option
-                                value="Click to Select"
-                                style={{
-                                    fontFamily: "Overlock",
-                                    fontWeight: "bolder",
-                                    fontSize: "20px"
-                                }}
-                            >
-                                Click to Select
-              </option>
-                            <option
-                                value="₹"
-                                style={{
-                                    fontFamily: "Overlock",
-                                    fontWeight: "bolder",
-                                    fontSize: "20px"
-                                }}
-                            >
-                                ₹(Indian RUPEES)
-              </option>
-                            <option
-                                value="£"
-                                style={{
-                                    fontFamily: "Overlock",
-                                    fontWeight: "bolder",
-                                    fontSize: "21px"
-                                }}
-                            >
-                                £(POUND Sterling)
-              </option>
-                            <option
-                                value="€"
-                                style={{
-                                    fontFamily: "Overlock",
-                                    fontWeight: "bolder",
-                                    fontSize: "20px"
-                                }}
-                            >
-                                €(EURO)
-              </option>
-                            <option
-                                value="¥"
-                                style={{
-                                    fontFamily: "Overlock",
-                                    fontWeight: "bolder",
-                                    fontSize: "20px"
-                                }}
-                            >
-                                ¥(Japaneese YEN)
-              </option>
-                            <option
-                                value="د.إ"
-                                style={{
-                                    fontFamily: "Overlock",
-                                    fontWeight: "bolder",
-                                    fontSize: "20px"
-                                }}
-                            >
-                                د.إ(DIRHAMS)
-              </option>
-                            <option
-                                value="$"
-                                style={{
-                                    fontFamily: "Overlock",
-                                    fontWeight: "bolder",
-                                    fontSize: "20px"
-                                }}
-                            >
-                                $(Us DOLLAR)
-              </option>
-                            <option
-                                value="C$"
-                                style={{
-                                    fontFamily: "Overlock",
-                                    fontWeight: "bolder",
-                                    fontSize: "20px"
-                                }}
-                            >
-                                C$(Canadian DOLLAR)
-              </option>
+                            <option value="Click to Select" style={{ fontFamily: "Overlock", fontWeight: "bolder", fontSize: "20px" }} >Click to Select</option>
+                            <option value="₹" style={{ fontFamily: "Overlock", fontWeight: "bolder", fontSize: "20px" }} >₹(Indian RUPEES)</option>
+                            <option value="£" style={{ fontFamily: "Overlock", fontWeight: "bolder", fontSize: "21px" }} >£(POUND Sterling)</option>
+                            <option value="€" style={{ fontFamily: "Overlock", fontWeight: "bolder", fontSize: "20px" }} >€(EURO)</option>
+                            <option value="¥" style={{ fontFamily: "Overlock", fontWeight: "bolder", fontSize: "20px" }} >¥(Japaneese YEN)</option>
+                            <option value="د.إ" style={{ fontFamily: "Overlock", fontWeight: "bolder", fontSize: "20px" }} >
+                                د.إ(DIRHAMS)</option>
+                            <option value="$" style={{ fontFamily: "Overlock", fontWeight: "bolder", fontSize: "20px" }} >$(Us DOLLAR)</option>
+                            <option value="C$" style={{ fontFamily: "Overlock", fontWeight: "bolder", fontSize: "20px" }} >C$(Canadian DOLLAR)</option>
                         </select>
                     </h2>
                     <input
@@ -365,11 +293,8 @@ function BudgetRecord() {
                         placeholder="Enter Amount..."
                     />
                     <br />
-                    <button className="add_button" onClick={(e) => handleCurrency(e)}>
-                        <span style={{ color: "white" }}>Add To The Record</span>
-                    </button>
-                    <br /> <br /> <br />
-                    <br />
+                    <button className="add_button" onClick={(e) => handleCurrency(e)}><span style={{ color: "white" }} >Add To The Record</span></button>
+                    <br /> <br /> <br /><br />
                     <input
                         className="search"
                         onChange={(e) => setSearch(e.target.value)}
@@ -402,13 +327,9 @@ function BudgetRecord() {
                             <p className="items">
                                 <b>
                                     <span className="items_name">{items.name}</span>
-                                    <span className="items_amount">
-                                        {items.amount} {items.currency}
-                                    </span>
+                                    <span className="items_amount">{items.amount} {items.currency}</span>
                                 </b>
-                                {items.name === "" ? (
-                                    ""
-                                ) : (
+                                {total !== 0 ? (
                                     <div className="buttons">
                                         <button
                                             className="edit_button"
@@ -423,7 +344,7 @@ function BudgetRecord() {
                                             <IoMdTrash className="delete" size="20px" />
                                         </button>
                                     </div>
-                                )}
+                                ) : null}
                             </p>
                         </div>
                     ))}
@@ -440,3 +361,64 @@ function BudgetRecord() {
 }
 
 export default BudgetRecord;
+
+// --------------------------------------------------------------------------------------------------------------------------------------------
+
+// Trash.js copy of previous code structure:
+
+import React from "react";
+
+function Trash(props) {
+    const { finalArray, setFinalArray, eventName } = props;
+
+    const handleTrash = () => {
+        if (finalArray === []) {
+            alert("Sorry🙃! Nothing to delete..");
+        } else {
+            var clicked = window.confirm(
+                "Hey there! You're about to empty your TRASH. You sure🤨?"
+            );
+            if (clicked === true) {
+                setFinalArray([]);
+            }
+            if (clicked === false) {
+                setFinalArray(finalArray);
+            }
+        }
+    };
+
+    return (
+        <div className="trash">
+            <button
+                className="empty_trash"
+                style={{ color: "white" }}
+                onClick={(e) => handleTrash(e)}
+            >
+                CLEAR TRASH
+      </button>
+            {finalArray.map((items, id) => (
+                <div key={id} className="trash_items">
+                    {/* <button onClick={() => handleSymbol(items)} >Show Symbol</button> */}
+                    <p>
+                        {" "}
+                        <span className="trash_name">
+                            <b>
+                                {" "}
+                                {eventName} {items.lebeling}
+                            </b>
+                            <br />
+                        </span>
+                        <span className="trash_amount">
+                            <b>
+                                {/* {items.digit} {items.bill} {""} */}
+                AMOUNT : ( {items.digit} {items.bill} ) {""}
+                            </b>
+                        </span>
+                    </p>
+                </div>
+            ))}
+        </div>
+    );
+}
+
+export default Trash;
